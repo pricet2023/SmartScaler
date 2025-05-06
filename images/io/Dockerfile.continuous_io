@@ -1,0 +1,13 @@
+FROM python:3.10-slim
+
+# Install stress-ng
+RUN apt-get update && apt-get install -y stress-ng && apt-get clean
+
+# Copy the Python script into the container
+COPY continuous_io.py /app/continuous_io.py
+
+# Set the working directory
+WORKDIR /app
+
+# Run the script
+CMD ["python", "continuous_io.py"]
