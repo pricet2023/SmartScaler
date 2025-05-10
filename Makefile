@@ -14,4 +14,4 @@ images:
 	docker build -t random_mem -f images/memory/Dockerfile.random_mem images/memory
 	docker build -t bursty_network -f images/network/Dockerfile.bursty_network images/network
 	docker build -t high_bw -f images/network/Dockerfile.high_bw images/network
-	docker build -t packet_loss -f images/network/Dockerfile.packet_loss images/network
+	docker build -t random_network -f images/network/Dockerfile.random_network images/network

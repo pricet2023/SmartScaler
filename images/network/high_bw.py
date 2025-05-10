@@ -2,7 +2,7 @@ import socket
 import time
 
 TARGET_HOST = "host.docker.internal"  # Replace with actual host or container IP
-TARGET_PORT = 9999                    # Replace with your listener port
+TARGET_PORT = 9000                    # Replace with your listener port
 
 def high_bandwidth_sender():
     data = b"x" * 1024 * 1024  # 1MB payload

@@ -1,17 +1,13 @@
-import socket
-import time
+FROM python:3.10-slim
 
-TARGET_HOST = "host.docker.internal"  # Replace with actual host or container IP
-TARGET_PORT = 9999                    # Replace with your listener port
+# Install stress-ng
+RUN apt-get update && apt-get install -y stress-ng && apt-get clean
 
-def high_bandwidth_sender():
-    data = b"x" * 1024 * 1024  # 1MB payload
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.connect((TARGET_HOST, TARGET_PORT))
+# Copy the Python script into the container
+COPY high_bw.py /app/high_bw.py
 
-    while True:
-        sock.sendall(data)
-        time.sleep(0.01)  # Adjust to control bandwidth
+# Set the working directory
+WORKDIR /app
 
-if __name__ == "__main__":
-    high_bandwidth_sender()
+# Run the script
+CMD ["python", "high_bw.py"]

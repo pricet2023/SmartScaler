@@ -2,7 +2,7 @@ import socket
 import time
 
 TARGET_HOST = "host.docker.internal"
-TARGET_PORT = 9999
+TARGET_PORT = 9000
 
 def bursty_sender():
     data = b"x" * 1024 * 1024  # 1MB

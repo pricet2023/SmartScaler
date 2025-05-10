@@ -7,7 +7,7 @@ def random_io():
     while True:
         op = random.choice(["read", "write"])
         size_kb = random.randint(4, 1024)  # 4KB to 1MB
-        path = f"/tmp/random_file_{i % 10}.bin"
+        path = f"/data/random_file_{i % 10}.bin"
 
         if op == "write":
             with open(path, "wb") as f:
