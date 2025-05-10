@@ -1,0 +1,12 @@
+FROM python:3.10-slim
+
+# Install tools for network control and ping
+RUN apt-get update && \
+    apt-get install -y iproute2 iputils-ping && \
+    pip install --no-cache-dir --upgrade pip
+
+# Copy scripts
+COPY random_network.py /random_network.py
+
+# Default command: start packet loss + run test
+CMD python /random_network.py
