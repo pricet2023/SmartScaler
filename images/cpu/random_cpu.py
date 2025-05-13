@@ -14,7 +14,7 @@ def noisy_worker():
         time.sleep(sleep_duration)
 
 if __name__ == "__main__":
-    num_threads = 2  # Adjust based on how noisy you'd like it
+    num_threads = random.randint(1, 2)  # Adjust based on how noisy you'd like it
 
     threads = []
     for _ in range(num_threads):

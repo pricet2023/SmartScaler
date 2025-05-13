@@ -1,5 +1,6 @@
 import threading
 import time
+import random
 
 def burn_cpu_for(duration):
     end_time = time.time() + duration
@@ -12,9 +13,9 @@ def spike_pattern(active_duration=5, idle_duration=5):
         time.sleep(idle_duration)
 
 if __name__ == "__main__":
-    num_threads = 1  # One thread = ~one logical CPU core. Adjust as needed.
-    active_duration = 5  # seconds
-    idle_duration = 5    # seconds
+    num_threads = random.randint(1, 2)  # One thread = ~one logical CPU core. Adjust as needed.
+    active_duration = random.randint(5, 10)  # seconds
+    idle_duration = random.randint(5 ,10)    # seconds
 
     threads = []
     for _ in range(num_threads):

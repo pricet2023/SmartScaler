@@ -1,4 +1,5 @@
 import threading
+import random
 
 def burn_cpu():
     while True:
@@ -6,7 +7,7 @@ def burn_cpu():
 
 if __name__ == "__main__":
     threads = []
-    num_threads = 1  # Adjust this to the number of CPU cores you want to max out
+    num_threads = random.randint(1, 2)  # Adjust this to the number of CPU cores you want to max out
 
     for _ in range(num_threads):
         t = threading.Thread(target=burn_cpu)
